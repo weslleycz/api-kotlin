@@ -1,13 +1,13 @@
 package com.br.api.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import java.util.*
+import javax.persistence.*
 
 @Entity
 data class Pessoa (
     @Id @GeneratedValue
-                   val id:Long?,
+    val id: UUID?,
     val name:String,
+    @Column(unique=true)
     val email:String,
     var password:String )
